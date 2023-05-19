@@ -1,0 +1,13 @@
+{
+  "name": "ePub",
+  "version": "0.0.0",
+  "description": "ePub tools",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/art-hanoi/ePub.git"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^4.2.2"
+  },
+  "private": true
+}
