@@ -7,7 +7,7 @@ var root = process.argv[2];
 if (!fs.existsSync(root) || !fs.lstatSync(root).isDirectory()) error(root + ' is not a directory!');
 
 const parser = new XML.XMLParser({ ignoreAttributes: false });
-var fname, txt, xml, cont, subdir;
+var fname, txt, xml, cont, subdir, arr;
 var item_by_id = {};
 var item_by_url = {};
 var all_files = {};
@@ -41,8 +41,19 @@ for (var tag of dc) {
   console.log('    dc:' + tag + ': ', txt);
 }
 if (!xml.package.manifest) error(fname + ': missing XML tag package.manifest');
-for (var item of xml.package.manifest.item) book_item(item);
+if (!xml.package.manifest.item) error(fname + ': missing XML tag package.manifest.item');
+arr = xml.package.manifest.item;
+if (!Array.isArray(arr)) arr = [arr];
+for (var it of arr) book_item(it);
 if (!xml.package.spine) error(fname + ': missing XML tag package.spine');
+if (!xml.package.spine.itemref) error(fname + ': missing XML tag package.spine.itemref');
+arr = xml.package.spine.itemref;
+if (!Array.isArray(arr)) arr = [arr];
+for (var it of arr) {
+  if (!it['@_idref']) error(fname + ': missing xml.package.spine.itemref reference');
+  if (!item_by_id[it['@_idref']]) error(fname + ': missing reference ' + it['@_idref']);
+}
+
 collect(root);
 
 var files = Object.keys(item_by_url).sort();
