@@ -7,6 +7,7 @@ Some useful links...
 ## ePub
 - [ePub Documentation](https://idpf.org/epub/dir)
 - [W3C EPUB 3.2](https://www.w3.org/publishing/epub/)
+- [EPUB 3 Samples](https://github.com/IDPF/epub3-samples)
 
 ## Kindle
 - [Amazon Kindle Publishing Guidelines](http://kindlegen.s3.amazonaws.com/AmazonKindlePublishingGuidelines.pdf)
