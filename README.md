@@ -12,3 +12,6 @@ Some useful links...
 ## Kindle
 - [Amazon Kindle Publishing Guidelines](http://kindlegen.s3.amazonaws.com/AmazonKindlePublishingGuidelines.pdf)
 - [Kindle Previewer](https://www.amazon.com/Kindle-Previewer/b?node=21381691011)
+
+## iBook
+- [Apple Books Formatting Guidelines](https://help.apple.com/itc/applebooksstoreformatting)
